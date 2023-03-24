@@ -50,17 +50,17 @@ function seleccionaAnimalEnemigo(){
 }
 
 function ataqueFuego(){
-    ataqueJugador = "Fuego"
+    ataqueJugador = "fuego"
     ataqueAleatorioEnemigo ()
 }
 
 function ataqueAgua(){
-    ataqueJugador = "Agua"
+    ataqueJugador = "agua"
     ataqueAleatorioEnemigo ()
 }
 
 function ataqueTierra(){
-    ataqueJugador = "Tierra"
+    ataqueJugador = "tierra"
      ataqueAleatorioEnemigo ()
 }
 
@@ -71,10 +71,10 @@ function ataqueAleatorioEnemigo(){
         ataqueEnemigo = "fuego"
     
     }else if (ataqueAleatorio == 2){
-        ataqueEnemigo = "Agua"
+        ataqueEnemigo = "agua"
     
     }else {
-        ataqueEnemigo = "Tierra"
+        ataqueEnemigo = "tierra"
     }   
 
 
@@ -87,11 +87,11 @@ function combate(){
 
     if (ataqueEnemigo == ataqueJugador){
         crearMensaje("Empate")
-    }  else if(ataqueJugador == "FUEGO" && ataqueEnemigo == "TIERRA"){
+    }  else if(ataqueJugador == "fuego" && ataqueEnemigo == "tierra"){
         crearMensaje("Ganaste")
-    }  else if(ataqueJugador == "AGUA" && ataqueEnemigo == "FUEGO"){
+    }  else if(ataqueJugador == "agua" && ataqueEnemigo == "fuego"){
         crearMensaje("Ganaste")
-    }  else if(ataqueJugador == "TIERRA" && ataqueEnemigo == "AGUA"){
+    }  else if(ataqueJugador == "tierra" && ataqueEnemigo == "agua"){
         crearMensaje("Ganaste")
     }  else {
         crearMensaje("Perdiste")
