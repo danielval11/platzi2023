@@ -1,5 +1,14 @@
 let ataqueJugador
 let ataqueEnemigo
+let vidasJugador = 3
+let vidasEnemigo = 3
+
+let seccionSelecionarAtaque = document.getElementById("seleccionar-ataque")
+seccionSelecionarAtaque.style.display = "none"
+
+let seccionReiniciar = document.getElementById("boton-reiniciar")
+seccionReiniciar.style.display = "none"
+
 
 let botonAnimalJugador = document.getElementById("boton-animal")
 botonAnimalJugador.addEventListener("click", seleccionarAnimalJugador)
@@ -11,12 +20,17 @@ botonAgua.addEventListener("click", ataqueAgua)
 let botonTierra = document.getElementById ("boton-tierra")
 botonTierra.addEventListener("click", ataqueTierra)
 
-function aleatoria (min, max){
-    return Math.floor(Math.random()*(max-min+1)+min)
-}
+let botonReiniciar = document.getElementById ("boton-reiniciar")
+botonReiniciar.addEventListener("click", reinicarJuego)
 
 
 function seleccionarAnimalJugador(){
+    let seccionSelecionarAnimal = document.getElementById("seleccionar-animal")
+    seccionSelecionarAnimal.style.display = "none"
+
+    let seccionSelecionarAtaque = document.getElementById("seleccionar-ataque")
+seccionSelecionarAtaque.style.display = "block"
+
     let inputleon = document.getElementById ("leon")
     let inputtiburon = document.getElementById ("tiburon")
     let inputpuma = document.getElementById ("puma")
@@ -84,20 +98,43 @@ function ataqueAleatorioEnemigo(){
 }
 
 function combate(){
+    let spamVidasJugador = document.getElementById("vidas jugador")
+    let spamVidasEnemigo = document.getElementById("vidas enemigo")
 
     if (ataqueEnemigo == ataqueJugador){
         crearMensaje("Empate")
     }  else if(ataqueJugador == "fuego" && ataqueEnemigo == "tierra"){
         crearMensaje("Ganaste")
+        vidasEnemigo--
+        spamVidasEnemigo.innerHTML = vidasEnemigo
     }  else if(ataqueJugador == "agua" && ataqueEnemigo == "fuego"){
         crearMensaje("Ganaste")
+        vidasEnemigo--
+        spamVidasEnemigo.innerHTML = vidasEnemigo
     }  else if(ataqueJugador == "tierra" && ataqueEnemigo == "agua"){
         crearMensaje("Ganaste")
+        vidasEnemigo--
+        spamVidasEnemigo.innerHTML = vidasEnemigo
     }  else {
         crearMensaje("Perdiste")
+        vidasJugador--
+        spamVidasJugador.innerHTML = vidasJugador
         
     }
 
+    revisarVidas()
+
+}
+
+
+function revisarVidas(){
+    if (vidasEnemigo == 0){
+        crearMensajeFinal(" felicitaciones ")
+
+    } else if (vidasJugador == 0){
+        crearMensajeFinal(" lo siento perdiste ")
+
+    } 
 }
 
 function crearMensaje(resultado){
@@ -109,5 +146,35 @@ function crearMensaje(resultado){
     seccionMensajes.appendChild(parrafo)
 
 }
+
+function crearMensajeFinal(resultadoFinal){
+    let seccionMensajes = document.getElementById("mensajes")
+
+    let parrafo = document.createElement("p")
+    parrafo.innerHTML = resultadoFinal
+
+    seccionMensajes.appendChild(parrafo)
+
+    let botonFuego = document.getElementById("boton-fuego")
+    botonFuego.disabled = true
+    let botonAgua = document.getElementById("boton-agua")
+    botonAgua.disabled = true
+    let botonTierra = document.getElementById ("boton-tierra")
+    botonTierra.disabled = true  
+
+    let seccionReiniciar = document.getElementById("boton-reiniciar")
+seccionReiniciar.style.display = "block"
+
+}
+
+function reinicarJuego(){
+    location.reload()
+}
+
+function aleatoria (min, max){
+    return Math.floor(Math.random()*(max-min+1)+min)
+}
+
+
 
 
