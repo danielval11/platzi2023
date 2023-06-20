@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Concert+One&display=swap');
+
+body{
+    font-family: 'Concert One', cursive;
+    background-color: #041562;
+}
+
+#seleccionar-animal{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.title{
+    color: white;
+    margin: 15px;
+   
+}
+.title2{
+    color: white;
+    margin: 15px;
+}
+
+.cards{
+    display: flex;
+    gap: 10px;
+}
+
+.tarjeta-de-animal{
+    width: 140px;
+    height: 100px;
+    background-color: #11468F;
+    padding: 10px;
+    box-sizing: border-box;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+
+.tarjeta-de-animal img{
+    width: 80px;
+}
+
+input{
+    width: 50px;
+    height: 15px;
+    margin: 2px;
+    border: solid;
+    background-color: black;
+}
+
+#boton-animal{
+    width: 125px;
+    height: 41px;
+    border-radius: 15px;
+    background-color: transparent;
+    border: 2px solid white;
+    color: white;
+    margin-top: 25px;
+    
+}
+
+input{
+    display: none
+}
+
+#seleccionar-ataque{
+    flex-direction: column;
+    align-items: center;
+}
+
+.boton-de-ataque{
+    background-color: #041562;
+    padding: 10px;
+    color: white;
+    margin: 5px;
+    width: 145px;
+    border-radius: 20px;
+}

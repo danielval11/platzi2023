@@ -7,52 +7,74 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <link rel="stylesheet" href="staly.css">
 
-    <title>GAME 2023 </title>
+    <title>GAME 2023</title>
   </head>
   <body>
-    <h1>Revelion</h1>
-
     <section id="seleccionar-animal">
-      <h2>Elige tu animal:</h2>
 
-      <label for="leon">leon</label>
-      <input type="radio" name = "animal" id="leon"> <br>
+      <h1 class="title">Revelion de la galaxia</h1>
 
-      <label for="tiburon">tiburon</label>
-      <input type="radio" name = "animal" id="tiburon"> <br>
+      <h2 class="title2">Elige tu animal:</h2>
 
-      <label for="puma">puma</label>
-      <input type="radio" name = "animal" id="puma"> <br>
+      <div class="cards">
 
+      <label class="tarjeta-de-animal"for="leon">
+        <p>leon</p>
+        <img src="./images/mokepons_mokepon_leon_attack.jpg" alt="leon">
+      </label>
+      <input type="radio" name = "animal" id="leon"> 
 
+      <label class="tarjeta-de-animal"for="tiburon">
+        <p>tiburon</p>
+        <img src="./images/mokepons_mokepon_tiburon_attack.jpg" alt="tiburon">
+      </label>
+      <input type="radio" name = "animal" id="tiburon"> 
 
+      <label class="tarjeta-de-animal"for="puma">
+        <p>puma</p>
+        <img src="./images/mokepons_mokepon_puma_attack.jpg" alt="puma">
+      </label>
+      <input type="radio" name = "animal" id="puma"> 
+
+      </div>
+      
       <button id="boton-animal">seleccionar</button>
     </section>
+    
 
     <section id="seleccionar-ataque">
 
-      <h2>Elige tu ataque:</h2>
+    <h1 class="title">Revelion de la galaxia</h1>
 
+      <h2 class="title2">Elige tu ataque:</h2>
+
+      <div>
+
+        <button id="boton-fuego" class="boton-de-ataque">fuego🔥</button>
+        <button id="boton-agua" class="boton-de-ataque">agua🌊</button>
+        <button id="boton-tierra" class="boton-de-ataque">tierra🌍</button>
+
+      </div>
+
+      <div>
+        <section id="mensajes">
+        
+        </section>
+    
+        <section id="reinicar">
+          <button id="boton-reiniciar">reinicar</button>
+        
+      </div>
+      <div>
         <p>Tu animal <samp id="animal jugador"></samp> tiene <span id="vidas jugador">3</span> vidas</p>
         <p>El animal <samp id="animal enmigo"></samp> del enmigo tiene <span id="vidas enemigo">3</span> vidas</p>
+      </section>
+      </div>
 
-         <p>
-
-            <button id="boton-fuego">fuego</button>
-            <button id="boton-agua">agua</button>
-            <button id="boton-tierra">tierra</button>
-
-          </p>
-    </section>
-
-    <section id="mensajes">
-        
-    </section>
-
-    <section id="reinicar">
-      <button id="boton-reiniciar">reinicar</button>
-    </section>
+      
+     
 
     <!-- Optional JavaScript; choose one of the two! -->
 

@@ -29,7 +29,7 @@ function seleccionarAnimalJugador(){
     seccionSelecionarAnimal.style.display = "none"
 
     let seccionSelecionarAtaque = document.getElementById("seleccionar-ataque")
-seccionSelecionarAtaque.style.display = "block"
+seccionSelecionarAtaque.style.display = "flex"
 
     let inputleon = document.getElementById ("leon")
     let inputtiburon = document.getElementById ("tiburon")
