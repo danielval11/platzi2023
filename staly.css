@@ -81,3 +81,21 @@ input{
     width: 145px;
     border-radius: 20px;
 }
+
+#mensajes{
+    margin-top: 20px;
+    padding: 20px;
+    background: #EEEEEE;
+    width: 280px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+#boton-reiniciar{
+    border: none;
+    color: #11468F;
+
+    
+}

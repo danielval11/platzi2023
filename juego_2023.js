@@ -129,7 +129,7 @@ function combate(){
 
 function revisarVidas(){
     if (vidasEnemigo == 0){
-        crearMensajeFinal(" felicitaciones ")
+        crearMensajeFinal(" Ganasate felicitaciones !! ")
 
     } else if (vidasJugador == 0){
         crearMensajeFinal(" lo siento perdiste ")
@@ -138,22 +138,28 @@ function revisarVidas(){
 }
 
 function crearMensaje(resultado){
-    let seccionMensajes = document.getElementById("mensajes")
+    let seccionMensajes = document.getElementById("resultado")
+    let ataqueDeljugador = document.getElementById("ataque-del-jugador")
+    let ataqueDelenemigo = document.getElementById("ataque-del-enemigo")
 
-    let parrafo = document.createElement("p")
-    parrafo.innerHTML = "Tu animal ataco con " + ataqueJugador + ", El animal del enmigo ataco con " + ataqueEnemigo + " - " + resultado
+    
+    let nuevoAtaquedeljugador = document.createElement("p")
+    let nuevoAtaqueEnemigo = document.createElement("p")
 
-    seccionMensajes.appendChild(parrafo)
+    seccionMensajes.innerHTML = resultado
+    nuevoAtaquedeljugador.innerHTML = ataqueJugador
+    nuevoAtaqueEnemigo.innerHTML = ataqueEnemigo
+
+    
+    ataqueDeljugador.appendChild(nuevoAtaquedeljugador)
+    ataqueDelenemigo.appendChild(nuevoAtaqueEnemigo)
 
 }
 
 function crearMensajeFinal(resultadoFinal){
-    let seccionMensajes = document.getElementById("mensajes")
-
-    let parrafo = document.createElement("p")
-    parrafo.innerHTML = resultadoFinal
-
-    seccionMensajes.appendChild(parrafo)
+    let seccionMensajes = document.getElementById("resultado")
+ 
+    seccionMensajes.innerHTML = resultadoFinal
 
     let botonFuego = document.getElementById("boton-fuego")
     botonFuego.disabled = true
@@ -163,7 +169,7 @@ function crearMensajeFinal(resultadoFinal){
     botonTierra.disabled = true  
 
     let seccionReiniciar = document.getElementById("boton-reiniciar")
-seccionReiniciar.style.display = "block"
+ seccionReiniciar.style.display = "block"
 
 }
 
