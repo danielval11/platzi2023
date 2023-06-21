@@ -19,24 +19,23 @@
       <h2 class="title2">Elige tu animal:</h2>
 
       <div class="cards">
-
+      <input type="radio" name = "animal" id="leon"> 
       <label class="tarjeta-de-animal"for="leon">
         <p>leon</p>
         <img src="./images/mokepons_mokepon_leon_attack.jpg" alt="leon">
       </label>
-      <input type="radio" name = "animal" id="leon"> 
-
+      
+      <input type="radio" name = "animal" id="tiburon"> 
       <label class="tarjeta-de-animal"for="tiburon">
         <p>tiburon</p>
         <img src="./images/mokepons_mokepon_tiburon_attack.jpg" alt="tiburon">
       </label>
-      <input type="radio" name = "animal" id="tiburon"> 
-
+      
+      <input type="radio" name = "animal" id="puma"> 
       <label class="tarjeta-de-animal"for="puma">
         <p>puma</p>
         <img src="./images/mokepons_mokepon_puma_attack.jpg" alt="puma">
       </label>
-      <input type="radio" name = "animal" id="puma"> 
 
       </div>
       
@@ -50,7 +49,7 @@
 
       <h2 class="title2">Elige tu ataque:</h2>
 
-      <div>
+      <div class="cajas-ataques">
 
         <button id="boton-fuego" class="boton-de-ataque">fuego🔥</button>
         <button id="boton-agua" class="boton-de-ataque">agua🌊</button>
@@ -68,14 +67,16 @@
 
 
 
-      <div>
-          <div>
+      <div class="cajas">
+          <div class="contra-jugar">
+              <p id="animal jugador"></p>
+              <p id="vidas jugador">3</p> 
               <div id="ataque-del-jugador"></div>
-              <p>Tu animal <samp id="animal jugador"></samp> tiene <span id="vidas jugador">3</span> vidas</p>
           </div>
-          <div>
+          <div class="contra-enmigo">
+              <p id="animal enmigo"></p>
+              <p id="vidas enmigo">3</p>
               <div id="ataque-del-enemigo"></div>
-              <p>El animal <samp id="animal enmigo"></samp> del enmigo tiene <span id="vidas enemigo">3</span> vidas</p>
           </div>
       </div>
     </section>

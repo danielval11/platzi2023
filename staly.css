@@ -22,7 +22,7 @@ body{
     margin: 15px;
 }
 
-.cards{
+.cards, .cajas-ataques {
     display: flex;
     gap: 10px;
 }
@@ -68,6 +68,10 @@ input{
     display: none
 }
 
+input:checked + label{
+    background-color: red;
+}
+
 #seleccionar-ataque{
     flex-direction: column;
     align-items: center;
@@ -98,4 +102,23 @@ input{
     color: #11468F;
 
     
+}
+
+.cajas{
+    display: grid;
+    grid-template-columns: 175px 100px;
+    color: white;
+}
+
+.contra-jugar, .contra-enemigo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+@media (max-width:360px){
+    .cards, .cajas-ataques{
+        flex-direction: column;
+    }
 }
