@@ -117,7 +117,7 @@ input:checked + label{
 }
 
 
-@media (max-width:360px){
+@media (max-width:600px){
     .cards, .cajas-ataques{
         flex-direction: column;
     }

@@ -1,48 +1,74 @@
+const seccionSelecionarAtaque = document.getElementById("seleccionar-ataque")
+const seccionReiniciar = document.getElementById("boton-reiniciar")
+const botonAnimalJugador = document.getElementById("boton-animal")
+const botonFuego = document.getElementById("boton-fuego")
+const botonAgua = document.getElementById("boton-agua")
+const botonTierra = document.getElementById ("boton-tierra")
+const botonReiniciar = document.getElementById ("boton-reiniciar")
+
+const seccionSelecionarAnimal = document.getElementById("seleccionar-animal")
+const inputleon = document.getElementById ("leon")
+const inputtiburon = document.getElementById ("tiburon")
+const inputpuma = document.getElementById ("puma")
+const spanJugadorAnimales = document.getElementById ("animal jugador")
+
+const spanAnimalEnemigo = document.getElementById("animal enmigo")
+
+const spanVidasJugador = document.getElementById("vidas jugador")
+const spanVidasEnemigo = document.getElementById("vidas enemigo")
+
+const seccionMensajes = document.getElementById("resultado")
+const ataqueDelenemigo = document.getElementById("ataque-del-enemigo")
+
+const ataqueDeljugador = document.getElementById("ataque-del-jugador")
+
+
+
+
 let ataqueJugador
 let ataqueEnemigo
 let vidasJugador = 3
 let vidasEnemigo = 3
 
-let seccionSelecionarAtaque = document.getElementById("seleccionar-ataque")
+
 seccionSelecionarAtaque.style.display = "none"
 
-let seccionReiniciar = document.getElementById("boton-reiniciar")
+
 seccionReiniciar.style.display = "none"
 
 
-let botonAnimalJugador = document.getElementById("boton-animal")
+
 botonAnimalJugador.addEventListener("click", seleccionarAnimalJugador)
 
-let botonFuego = document.getElementById("boton-fuego")
+
 botonFuego.addEventListener("click", ataqueFuego)
-let botonAgua = document.getElementById("boton-agua")
+
 botonAgua.addEventListener("click", ataqueAgua)
-let botonTierra = document.getElementById ("boton-tierra")
+
 botonTierra.addEventListener("click", ataqueTierra)
 
-let botonReiniciar = document.getElementById ("boton-reiniciar")
+
 botonReiniciar.addEventListener("click", reinicarJuego)
 
 
 function seleccionarAnimalJugador(){
-    let seccionSelecionarAnimal = document.getElementById("seleccionar-animal")
+    
     seccionSelecionarAnimal.style.display = "none"
 
-    let seccionSelecionarAtaque = document.getElementById("seleccionar-ataque")
-seccionSelecionarAtaque.style.display = "flex"
-
-    let inputleon = document.getElementById ("leon")
-    let inputtiburon = document.getElementById ("tiburon")
-    let inputpuma = document.getElementById ("puma")
-    let spamJugadorAnimales = document.getElementById ("animal jugador")
+    
+    seccionSelecionarAtaque.style.display = "flex"
+    
+    
+    
+    
 
 
     if(inputleon.checked){
-        spamJugadorAnimales.innerHTML = "leon"
+        spanJugadorAnimales.innerHTML = "leon"
     } else if (inputtiburon.checked){
-        spamJugadorAnimales.innerHTML = "tiburon"
+        spanJugadorAnimales.innerHTML = "tiburon"
     } else if (inputpuma.checked){
-        spamJugadorAnimales.innerHTML = "puma"
+        spanJugadorAnimales.innerHTML = "puma"
     } else {
         alert("Selecciona un animal")
     }
@@ -52,14 +78,14 @@ seccionSelecionarAtaque.style.display = "flex"
 
 function seleccionaAnimalEnemigo(){
     let animalAleatorio = aleatoria(1,3)
-    let seleccionaAnimalEnemigo = document.getElementById("animal enmigo")
+    
 
     if(animalAleatorio == 1){
-        seleccionaAnimalEnemigo.innerHTML = "leon"
+        spanAnimalEnemigo.innerHTML = "leon"
      }else if (animalAleatorio == 2){
-        seleccionaAnimalEnemigo.innerHTML = "tiburon"
+        spanAnimalEnemigo.innerHTML = "tiburon"
      }else{ 
-        seleccionaAnimalEnemigo.innerHTML = "puma"
+        spanAnimalEnemigo.innerHTML = "puma"
      }
 }
 
@@ -98,27 +124,26 @@ function ataqueAleatorioEnemigo(){
 }
 
 function combate(){
-    let spamVidasJugador = document.getElementById("vidas jugador")
-    let spamVidasEnemigo = document.getElementById("vidas enemigo")
+    
 
     if (ataqueEnemigo == ataqueJugador){
         crearMensaje("Empate")
     }  else if(ataqueJugador == "fuego" && ataqueEnemigo == "tierra"){
         crearMensaje("Ganaste")
         vidasEnemigo--
-        spamVidasEnemigo.innerHTML = vidasEnemigo
+        spanVidasEnemigo.innerHTML = vidasEnemigo
     }  else if(ataqueJugador == "agua" && ataqueEnemigo == "fuego"){
         crearMensaje("Ganaste")
         vidasEnemigo--
-        spamVidasEnemigo.innerHTML = vidasEnemigo
+        spanVidasEnemigo.innerHTML = vidasEnemigo
     }  else if(ataqueJugador == "tierra" && ataqueEnemigo == "agua"){
         crearMensaje("Ganaste")
         vidasEnemigo--
-        spamVidasEnemigo.innerHTML = vidasEnemigo
+        spanVidasEnemigo.innerHTML = vidasEnemigo
     }  else {
         crearMensaje("Perdiste")
         vidasJugador--
-        spamVidasJugador.innerHTML = vidasJugador
+        spanVidasJugador.innerHTML = vidasJugador
         
     }
 
@@ -138,9 +163,7 @@ function revisarVidas(){
 }
 
 function crearMensaje(resultado){
-    let seccionMensajes = document.getElementById("resultado")
-    let ataqueDeljugador = document.getElementById("ataque-del-jugador")
-    let ataqueDelenemigo = document.getElementById("ataque-del-enemigo")
+    
 
     
     let nuevoAtaquedeljugador = document.createElement("p")
@@ -157,18 +180,18 @@ function crearMensaje(resultado){
 }
 
 function crearMensajeFinal(resultadoFinal){
-    let seccionMensajes = document.getElementById("resultado")
+    
  
     seccionMensajes.innerHTML = resultadoFinal
 
-    let botonFuego = document.getElementById("boton-fuego")
+    
     botonFuego.disabled = true
-    let botonAgua = document.getElementById("boton-agua")
+    
     botonAgua.disabled = true
-    let botonTierra = document.getElementById ("boton-tierra")
+    
     botonTierra.disabled = true  
 
-    let seccionReiniciar = document.getElementById("boton-reiniciar")
+    
  seccionReiniciar.style.display = "block"
 
 }
@@ -180,7 +203,4 @@ function reinicarJuego(){
 function aleatoria (min, max){
     return Math.floor(Math.random()*(max-min+1)+min)
 }
-
-
-
 
